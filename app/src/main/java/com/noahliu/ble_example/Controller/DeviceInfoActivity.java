@@ -14,6 +14,7 @@ import android.os.IBinder;
 import android.util.Log;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,7 +23,10 @@ import com.noahliu.ble_example.Module.Enitiy.ScannedData;
 import com.noahliu.ble_example.Module.Enitiy.ServiceInfo;
 import com.noahliu.ble_example.Module.Service.BluetoothLeService;
 import com.noahliu.ble_example.R;
+
 import java.util.List;
+
+import okhttp3.OkHttpClient;
 
 public class DeviceInfoActivity extends AppCompatActivity implements ExpandableListAdapter.OnChildClick {
     public static final String TAG = DeviceInfoActivity.class.getSimpleName()+"My";
@@ -108,6 +112,7 @@ public class DeviceInfoActivity extends AppCompatActivity implements ExpandableL
                 List<BluetoothGattService> gattList =  mBluetoothLeService.getSupportedGattServices();
                 displayGattAtLogCat(gattList);
                 expandableListAdapter.setServiceInfo(gattList);
+                OkHttpClient client = new OkHttpClient();
             }
             /**接收來自藍芽傳回的資料*/
             else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) {

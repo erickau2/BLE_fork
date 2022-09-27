@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.noahliu.ble_example.Module.Enitiy.ScannedData;
+import com.noahliu.ble_example.Module.Service.HttpService;
 import com.noahliu.ble_example.R;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private OnItemClick onItemClick;
     private List<ScannedData> arrayList = new ArrayList<>();
     private Activity activity;
+    private HttpService httpService;
 
     public RecyclerViewAdapter(Activity activity) {
         this.activity = activity;
@@ -60,6 +62,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
         holder.tvName.setText(arrayList.get(position).getDeviceName());
         holder.tvAddress.setText("裝置位址："+arrayList.get(position).getAddress());
         holder.tvInfo.setText("裝置挾帶的資訊：\n"+arrayList.get(position).getDeviceByteInfo());
@@ -67,6 +70,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.itemView.setOnClickListener(v -> {
             onItemClick.onItemClick(arrayList.get(position));
         });
+
     }
 
     @Override

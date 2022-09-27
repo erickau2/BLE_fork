@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
@@ -16,8 +17,10 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.noahliu.ble_example.Module.Adapter.HttpAdapter;
 import com.noahliu.ble_example.Module.Adapter.RecyclerViewAdapter;
 import com.noahliu.ble_example.Module.Enitiy.ScannedData;
+import com.noahliu.ble_example.Module.Service.HttpService;
 import com.noahliu.ble_example.R;
 
 
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isScanning = false;
     ArrayList<ScannedData> findDevice = new ArrayList<>();
     RecyclerViewAdapter mAdapter;
+    HttpAdapter httpAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,6 +144,8 @@ public class MainActivity extends AppCompatActivity {
                     runOnUiThread(()->{
                         /**將陣列送到RecyclerView列表中*/
                         mAdapter.addDevice(newList);
+                        httpAdapter=new HttpAdapter(newList);
+                        httpAdapter.sendToHTTP();
                     });
                 }
             }).start();
