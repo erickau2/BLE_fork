@@ -19,7 +19,7 @@ public class HttpAdapter {
     public void clearDevice(){
         this.arrayList.clear();
     }
-    /**若有不重複的裝置出現，則加入列表中*/
+    /**send ScannedData to web server*/
     public void sendToHTTP(){
         for(int i=0;i<arrayList.size();i++)
         this.httpService.post(arrayList.get(i));

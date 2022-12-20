@@ -38,7 +38,6 @@ public class ScannedData implements Serializable {
     @Override
     public boolean equals(@Nullable Object obj) {
         ScannedData p = (ScannedData)obj;
-
         return this.address.equals(p.address);
     }
 

@@ -115,6 +115,12 @@ public class MainActivity extends AppCompatActivity {
         findDevice.clear();
         mBluetoothAdapter.startLeScan(mLeScanCallback);
         mAdapter.clearDevice();
+        mBluetoothAdapter.cancelDiscovery();
+        mBluetoothAdapter.startDiscovery();
+        mBluetoothAdapter.stopLeScan(mLeScanCallback);
+        findDevice.clear();
+        mBluetoothAdapter.startLeScan(mLeScanCallback);
+        mAdapter.clearDevice();
     }
     /**避免跳轉後掃描程序係續浪費效能，因此離開頁面後即停止掃描*/
     @Override
