@@ -122,8 +122,6 @@ public class DeviceInfoActivity extends AppCompatActivity implements ExpandableL
                 for (byte byteChar : getByteData)
                     stringBuilder.append(String.format("%02X ", byteChar));
                 String stringData = new String(getByteData);
-                Log.d(TAG, "String: "+stringData+"\n"
-                        +"byte[]: "+BluetoothLeService.byteArrayToHexStr(getByteData));
                 tvRespond.setText("String: "+stringData+"\n"
                         +"byte[]: "+BluetoothLeService.byteArrayToHexStr(getByteData));
                 isLedOn = BluetoothLeService.byteArrayToHexStr(getByteData).equals("486173206F6E");

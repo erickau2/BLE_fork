@@ -8,6 +8,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHubRepo/BLE_fork/app/src/main/res/layout/activity_device_control.xml" value="0.2859375" />
+        <entry key="..\:/GitHubRepo/BLE_fork/app/src/main/res/layout/characteristic_item.xml" value="0.2859375" />
+        <entry key="..\:/GitHubRepo/BLE_fork/app/src/main/res/layout/descriptor_item.xml" value="0.2859375" />
+        <entry key="..\:/GitHubRepo/BLE_fork/app/src/main/res/layout/scanned_item.xml" value="0.2859375" />
+        <entry key="..\:/GitHubRepo/BLE_fork/app/src/main/res/layout/service_item.xml" value="0.2859375" />
         <entry key="..\:/fyp/BLE_fork/app/src/main/res/layout/activity_main.xml" value="0.14945652173913043" />
       </map>
     </option>

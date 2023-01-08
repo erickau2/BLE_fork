@@ -31,12 +31,13 @@ public class HttpService  {
         /**設置傳送所需夾帶的內容*/
         FormBody formBody = new FormBody.Builder()
                 .add("name", scannedData.getDeviceName())
-                .add("id", scannedData.getAddress())
+                .add("address", scannedData.getAddress())
                 .add("rssi", scannedData.getRssi())
                 .build();
         /**設置傳送需求*/
         Request request = new Request.Builder()
-                .url("https://jsonplaceholder.typicode.com/posts")
+//                .url("https://jsonplaceholder.typicode.com/posts")
+                .url("http://your-own-ipadress:3000//")
                 .post(formBody)
                 .build();
         /**設置回傳*/
